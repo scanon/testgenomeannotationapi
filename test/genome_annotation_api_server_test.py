@@ -8,8 +8,8 @@ from ConfigParser import ConfigParser
 from pprint import pprint
 
 from biokbase.workspace.client import Workspace as workspaceService
-from testGenomeAnnotationAPI.testGenomeAnnotationAPIImpl import testGenomeAnnotationAPI
-from testGenomeAnnotationAPI.testGenomeAnnotationAPIServer import MethodContext
+from testGenAnnoAPI.testGenAnnoAPIImpl import testGenAnnoAPI
+from testGenAnnoAPI.testGenAnnoAPIServer import MethodContext
 
 
 class genome_annotation_apiTest(unittest.TestCase):
@@ -22,7 +22,7 @@ class genome_annotation_apiTest(unittest.TestCase):
         cls.ctx = MethodContext(None)
         cls.ctx.update({'token': token,
                         'provenance': [
-                            {'service': 'testGenomeAnnotationAPI',
+                            {'service': 'testGenAnnoAPI',
                              'method': 'please_never_use_it_in_production',
                              'method_params': []
                              }],
@@ -31,11 +31,11 @@ class genome_annotation_apiTest(unittest.TestCase):
         cls.cfg = {}
         config = ConfigParser()
         config.read(config_file)
-        for nameval in config.items('testGenomeAnnotationAPI'):
+        for nameval in config.items('testGenAnnoAPI'):
             cls.cfg[nameval[0]] = nameval[1]
         cls.wsURL = cls.cfg['workspace-url']
         cls.wsClient = workspaceService(cls.wsURL, token=token)
-        cls.serviceImpl = testGenomeAnnotationAPI(cls.cfg)
+        cls.serviceImpl = testGenAnnoAPI(cls.cfg)
 
         cls.obj_name="ReferenceGenomeAnnotations/kb|g.207118"
 
@@ -64,7 +64,7 @@ class genome_annotation_apiTest(unittest.TestCase):
         if hasattr(self.__class__, 'wsName'):
             return self.__class__.wsName
         suffix = int(time.time() * 1000)
-        wsName = "test_testGenomeAnnotationAPI_" + str(suffix)
+        wsName = "test_testGenAnnoAPI_" + str(suffix)
         ret = self.getWsClient().create_workspace({'workspace': wsName})
         self.__class__.wsName = wsName
         return wsName

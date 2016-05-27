@@ -1,4 +1,4 @@
-package testGenomeAnnotationAPI::testGenomeAnnotationAPIClient;
+package testGenAnnoAPI::testGenAnnoAPIClient;
 
 use JSON::RPC::Client;
 use POSIX;
@@ -21,7 +21,7 @@ our $VERSION = "0.1.0";
 
 =head1 NAME
 
-testGenomeAnnotationAPI::testGenomeAnnotationAPIClient
+testGenAnnoAPI::testGenAnnoAPIClient
 
 =head1 DESCRIPTION
 
@@ -37,7 +37,7 @@ sub new
     
 
     my $self = {
-	client => testGenomeAnnotationAPI::testGenomeAnnotationAPIClient::RpcClient->new,
+	client => testGenAnnoAPI::testGenAnnoAPIClient::RpcClient->new,
 	url => $url,
 	headers => [],
     };
@@ -120,8 +120,8 @@ sub new
 =begin html
 
 <pre>
-$ref is a testGenomeAnnotationAPI.ObjectReference
-$return is a testGenomeAnnotationAPI.ObjectReference
+$ref is a testGenAnnoAPI.ObjectReference
+$return is a testGenAnnoAPI.ObjectReference
 ObjectReference is a string
 
 </pre>
@@ -130,8 +130,8 @@ ObjectReference is a string
 
 =begin text
 
-$ref is a testGenomeAnnotationAPI.ObjectReference
-$return is a testGenomeAnnotationAPI.ObjectReference
+$ref is a testGenAnnoAPI.ObjectReference
+$return is a testGenAnnoAPI.ObjectReference
 ObjectReference is a string
 
 
@@ -171,7 +171,7 @@ Retrieve the Taxon associated with this GenomeAnnotation.
     }
 
     my $result = $self->{client}->call($self->{url}, $self->{headers}, {
-	method => "testGenomeAnnotationAPI.get_taxon",
+	method => "testGenAnnoAPI.get_taxon",
 	params => \@args,
     });
     if ($result) {
@@ -205,8 +205,8 @@ Retrieve the Taxon associated with this GenomeAnnotation.
 =begin html
 
 <pre>
-$ref is a testGenomeAnnotationAPI.ObjectReference
-$return is a testGenomeAnnotationAPI.ObjectReference
+$ref is a testGenAnnoAPI.ObjectReference
+$return is a testGenAnnoAPI.ObjectReference
 ObjectReference is a string
 
 </pre>
@@ -215,8 +215,8 @@ ObjectReference is a string
 
 =begin text
 
-$ref is a testGenomeAnnotationAPI.ObjectReference
-$return is a testGenomeAnnotationAPI.ObjectReference
+$ref is a testGenAnnoAPI.ObjectReference
+$return is a testGenAnnoAPI.ObjectReference
 ObjectReference is a string
 
 
@@ -256,7 +256,7 @@ Retrieve the Assembly associated with this GenomeAnnotation.
     }
 
     my $result = $self->{client}->call($self->{url}, $self->{headers}, {
-	method => "testGenomeAnnotationAPI.get_assembly",
+	method => "testGenAnnoAPI.get_assembly",
 	params => \@args,
     });
     if ($result) {
@@ -290,7 +290,7 @@ Retrieve the Assembly associated with this GenomeAnnotation.
 =begin html
 
 <pre>
-$ref is a testGenomeAnnotationAPI.ObjectReference
+$ref is a testGenAnnoAPI.ObjectReference
 $return is a reference to a list where each element is a string
 ObjectReference is a string
 
@@ -300,7 +300,7 @@ ObjectReference is a string
 
 =begin text
 
-$ref is a testGenomeAnnotationAPI.ObjectReference
+$ref is a testGenAnnoAPI.ObjectReference
 $return is a reference to a list where each element is a string
 ObjectReference is a string
 
@@ -341,7 +341,7 @@ Retrieve the list of Feature types.
     }
 
     my $result = $self->{client}->call($self->{url}, $self->{headers}, {
-	method => "testGenomeAnnotationAPI.get_feature_types",
+	method => "testGenAnnoAPI.get_feature_types",
 	params => \@args,
     });
     if ($result) {
@@ -375,7 +375,7 @@ Retrieve the list of Feature types.
 =begin html
 
 <pre>
-$ref is a testGenomeAnnotationAPI.ObjectReference
+$ref is a testGenAnnoAPI.ObjectReference
 $feature_type_list is a reference to a list where each element is a string
 $return is a reference to a hash where the key is a string and the value is a string
 ObjectReference is a string
@@ -386,7 +386,7 @@ ObjectReference is a string
 
 =begin text
 
-$ref is a testGenomeAnnotationAPI.ObjectReference
+$ref is a testGenAnnoAPI.ObjectReference
 $feature_type_list is a reference to a list where each element is a string
 $return is a reference to a hash where the key is a string and the value is a string
 ObjectReference is a string
@@ -433,7 +433,7 @@ this GenomeAnnotation.
     }
 
     my $result = $self->{client}->call($self->{url}, $self->{headers}, {
-	method => "testGenomeAnnotationAPI.get_feature_type_descriptions",
+	method => "testGenAnnoAPI.get_feature_type_descriptions",
 	params => \@args,
     });
     if ($result) {
@@ -467,7 +467,7 @@ this GenomeAnnotation.
 =begin html
 
 <pre>
-$ref is a testGenomeAnnotationAPI.ObjectReference
+$ref is a testGenAnnoAPI.ObjectReference
 $feature_type_list is a reference to a list where each element is a string
 $return is a reference to a hash where the key is a string and the value is an int
 ObjectReference is a string
@@ -478,7 +478,7 @@ ObjectReference is a string
 
 =begin text
 
-$ref is a testGenomeAnnotationAPI.ObjectReference
+$ref is a testGenAnnoAPI.ObjectReference
 $feature_type_list is a reference to a list where each element is a string
 $return is a reference to a hash where the key is a string and the value is an int
 ObjectReference is a string
@@ -522,7 +522,7 @@ Retrieve the count of each Feature type.
     }
 
     my $result = $self->{client}->call($self->{url}, $self->{headers}, {
-	method => "testGenomeAnnotationAPI.get_feature_type_counts",
+	method => "testGenAnnoAPI.get_feature_type_counts",
 	params => \@args,
     });
     if ($result) {
@@ -556,14 +556,14 @@ Retrieve the count of each Feature type.
 =begin html
 
 <pre>
-$ref is a testGenomeAnnotationAPI.ObjectReference
-$filters is a testGenomeAnnotationAPI.Feature_id_filters
+$ref is a testGenAnnoAPI.ObjectReference
+$filters is a testGenAnnoAPI.Feature_id_filters
 $group_type is a string
-$return is a testGenomeAnnotationAPI.Feature_id_mapping
+$return is a testGenAnnoAPI.Feature_id_mapping
 ObjectReference is a string
 Feature_id_filters is a reference to a hash where the following keys are defined:
 	type_list has a value which is a reference to a list where each element is a string
-	region_list has a value which is a reference to a list where each element is a testGenomeAnnotationAPI.Region
+	region_list has a value which is a reference to a list where each element is a testGenAnnoAPI.Region
 	function_list has a value which is a reference to a list where each element is a string
 	alias_list has a value which is a reference to a list where each element is a string
 Region is a reference to a hash where the following keys are defined:
@@ -583,14 +583,14 @@ Feature_id_mapping is a reference to a hash where the following keys are defined
 
 =begin text
 
-$ref is a testGenomeAnnotationAPI.ObjectReference
-$filters is a testGenomeAnnotationAPI.Feature_id_filters
+$ref is a testGenAnnoAPI.ObjectReference
+$filters is a testGenAnnoAPI.Feature_id_filters
 $group_type is a string
-$return is a testGenomeAnnotationAPI.Feature_id_mapping
+$return is a testGenAnnoAPI.Feature_id_mapping
 ObjectReference is a string
 Feature_id_filters is a reference to a hash where the following keys are defined:
 	type_list has a value which is a reference to a list where each element is a string
-	region_list has a value which is a reference to a list where each element is a testGenomeAnnotationAPI.Region
+	region_list has a value which is a reference to a list where each element is a testGenAnnoAPI.Region
 	function_list has a value which is a reference to a list where each element is a string
 	alias_list has a value which is a reference to a list where each element is a string
 Region is a reference to a hash where the following keys are defined:
@@ -647,7 +647,7 @@ Retrieve Feature IDs, optionally filtered by type, region, function, alias.
     }
 
     my $result = $self->{client}->call($self->{url}, $self->{headers}, {
-	method => "testGenomeAnnotationAPI.get_feature_ids",
+	method => "testGenAnnoAPI.get_feature_ids",
 	params => \@args,
     });
     if ($result) {
@@ -681,9 +681,9 @@ Retrieve Feature IDs, optionally filtered by type, region, function, alias.
 =begin html
 
 <pre>
-$ref is a testGenomeAnnotationAPI.ObjectReference
+$ref is a testGenAnnoAPI.ObjectReference
 $feature_id_list is a reference to a list where each element is a string
-$return is a reference to a hash where the key is a string and the value is a testGenomeAnnotationAPI.Feature_data
+$return is a reference to a hash where the key is a string and the value is a testGenAnnoAPI.Feature_data
 ObjectReference is a string
 Feature_data is a reference to a hash where the following keys are defined:
 	feature_id has a value which is a string
@@ -693,7 +693,7 @@ Feature_data is a reference to a hash where the following keys are defined:
 	feature_dna_sequence_length has a value which is an int
 	feature_dna_sequence has a value which is a string
 	feature_md5 has a value which is a string
-	feature_locations has a value which is a reference to a list where each element is a testGenomeAnnotationAPI.Region
+	feature_locations has a value which is a reference to a list where each element is a testGenAnnoAPI.Region
 	feature_publications has a value which is a reference to a list where each element is a string
 	feature_quality_warnings has a value which is a reference to a list where each element is a string
 	feature_quality_score has a value which is a reference to a list where each element is a string
@@ -711,9 +711,9 @@ Region is a reference to a hash where the following keys are defined:
 
 =begin text
 
-$ref is a testGenomeAnnotationAPI.ObjectReference
+$ref is a testGenAnnoAPI.ObjectReference
 $feature_id_list is a reference to a list where each element is a string
-$return is a reference to a hash where the key is a string and the value is a testGenomeAnnotationAPI.Feature_data
+$return is a reference to a hash where the key is a string and the value is a testGenAnnoAPI.Feature_data
 ObjectReference is a string
 Feature_data is a reference to a hash where the following keys are defined:
 	feature_id has a value which is a string
@@ -723,7 +723,7 @@ Feature_data is a reference to a hash where the following keys are defined:
 	feature_dna_sequence_length has a value which is an int
 	feature_dna_sequence has a value which is a string
 	feature_md5 has a value which is a string
-	feature_locations has a value which is a reference to a list where each element is a testGenomeAnnotationAPI.Region
+	feature_locations has a value which is a reference to a list where each element is a testGenAnnoAPI.Region
 	feature_publications has a value which is a reference to a list where each element is a string
 	feature_quality_warnings has a value which is a reference to a list where each element is a string
 	feature_quality_score has a value which is a reference to a list where each element is a string
@@ -775,7 +775,7 @@ Retrieve Feature data.
     }
 
     my $result = $self->{client}->call($self->{url}, $self->{headers}, {
-	method => "testGenomeAnnotationAPI.get_features",
+	method => "testGenAnnoAPI.get_features",
 	params => \@args,
     });
     if ($result) {
@@ -809,8 +809,8 @@ Retrieve Feature data.
 =begin html
 
 <pre>
-$ref is a testGenomeAnnotationAPI.ObjectReference
-$return is a reference to a hash where the key is a string and the value is a testGenomeAnnotationAPI.Protein_data
+$ref is a testGenAnnoAPI.ObjectReference
+$return is a reference to a hash where the key is a string and the value is a testGenAnnoAPI.Protein_data
 ObjectReference is a string
 Protein_data is a reference to a hash where the following keys are defined:
 	protein_id has a value which is a string
@@ -826,8 +826,8 @@ Protein_data is a reference to a hash where the following keys are defined:
 
 =begin text
 
-$ref is a testGenomeAnnotationAPI.ObjectReference
-$return is a reference to a hash where the key is a string and the value is a testGenomeAnnotationAPI.Protein_data
+$ref is a testGenAnnoAPI.ObjectReference
+$return is a reference to a hash where the key is a string and the value is a testGenAnnoAPI.Protein_data
 ObjectReference is a string
 Protein_data is a reference to a hash where the following keys are defined:
 	protein_id has a value which is a string
@@ -874,7 +874,7 @@ Retrieve Protein data.
     }
 
     my $result = $self->{client}->call($self->{url}, $self->{headers}, {
-	method => "testGenomeAnnotationAPI.get_proteins",
+	method => "testGenAnnoAPI.get_proteins",
 	params => \@args,
     });
     if ($result) {
@@ -908,9 +908,9 @@ Retrieve Protein data.
 =begin html
 
 <pre>
-$ref is a testGenomeAnnotationAPI.ObjectReference
+$ref is a testGenAnnoAPI.ObjectReference
 $feature_id_list is a reference to a list where each element is a string
-$return is a reference to a hash where the key is a string and the value is a reference to a list where each element is a testGenomeAnnotationAPI.Region
+$return is a reference to a hash where the key is a string and the value is a reference to a list where each element is a testGenAnnoAPI.Region
 ObjectReference is a string
 Region is a reference to a hash where the following keys are defined:
 	contig_id has a value which is a string
@@ -924,9 +924,9 @@ Region is a reference to a hash where the following keys are defined:
 
 =begin text
 
-$ref is a testGenomeAnnotationAPI.ObjectReference
+$ref is a testGenAnnoAPI.ObjectReference
 $feature_id_list is a reference to a list where each element is a string
-$return is a reference to a hash where the key is a string and the value is a reference to a list where each element is a testGenomeAnnotationAPI.Region
+$return is a reference to a hash where the key is a string and the value is a reference to a list where each element is a testGenAnnoAPI.Region
 ObjectReference is a string
 Region is a reference to a hash where the following keys are defined:
 	contig_id has a value which is a string
@@ -974,7 +974,7 @@ Retrieve Feature locations.
     }
 
     my $result = $self->{client}->call($self->{url}, $self->{headers}, {
-	method => "testGenomeAnnotationAPI.get_feature_locations",
+	method => "testGenAnnoAPI.get_feature_locations",
 	params => \@args,
     });
     if ($result) {
@@ -1008,7 +1008,7 @@ Retrieve Feature locations.
 =begin html
 
 <pre>
-$ref is a testGenomeAnnotationAPI.ObjectReference
+$ref is a testGenAnnoAPI.ObjectReference
 $feature_id_list is a reference to a list where each element is a string
 $return is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
 ObjectReference is a string
@@ -1019,7 +1019,7 @@ ObjectReference is a string
 
 =begin text
 
-$ref is a testGenomeAnnotationAPI.ObjectReference
+$ref is a testGenAnnoAPI.ObjectReference
 $feature_id_list is a reference to a list where each element is a string
 $return is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
 ObjectReference is a string
@@ -1064,7 +1064,7 @@ Retrieve Feature publications.
     }
 
     my $result = $self->{client}->call($self->{url}, $self->{headers}, {
-	method => "testGenomeAnnotationAPI.get_feature_publications",
+	method => "testGenAnnoAPI.get_feature_publications",
 	params => \@args,
     });
     if ($result) {
@@ -1098,7 +1098,7 @@ Retrieve Feature publications.
 =begin html
 
 <pre>
-$ref is a testGenomeAnnotationAPI.ObjectReference
+$ref is a testGenAnnoAPI.ObjectReference
 $feature_id_list is a reference to a list where each element is a string
 $return is a reference to a hash where the key is a string and the value is a string
 ObjectReference is a string
@@ -1109,7 +1109,7 @@ ObjectReference is a string
 
 =begin text
 
-$ref is a testGenomeAnnotationAPI.ObjectReference
+$ref is a testGenAnnoAPI.ObjectReference
 $feature_id_list is a reference to a list where each element is a string
 $return is a reference to a hash where the key is a string and the value is a string
 ObjectReference is a string
@@ -1154,7 +1154,7 @@ Retrieve Feature DNA sequences.
     }
 
     my $result = $self->{client}->call($self->{url}, $self->{headers}, {
-	method => "testGenomeAnnotationAPI.get_feature_dna",
+	method => "testGenAnnoAPI.get_feature_dna",
 	params => \@args,
     });
     if ($result) {
@@ -1188,7 +1188,7 @@ Retrieve Feature DNA sequences.
 =begin html
 
 <pre>
-$ref is a testGenomeAnnotationAPI.ObjectReference
+$ref is a testGenAnnoAPI.ObjectReference
 $feature_id_list is a reference to a list where each element is a string
 $return is a reference to a hash where the key is a string and the value is a string
 ObjectReference is a string
@@ -1199,7 +1199,7 @@ ObjectReference is a string
 
 =begin text
 
-$ref is a testGenomeAnnotationAPI.ObjectReference
+$ref is a testGenAnnoAPI.ObjectReference
 $feature_id_list is a reference to a list where each element is a string
 $return is a reference to a hash where the key is a string and the value is a string
 ObjectReference is a string
@@ -1244,7 +1244,7 @@ Retrieve Feature functions.
     }
 
     my $result = $self->{client}->call($self->{url}, $self->{headers}, {
-	method => "testGenomeAnnotationAPI.get_feature_functions",
+	method => "testGenAnnoAPI.get_feature_functions",
 	params => \@args,
     });
     if ($result) {
@@ -1278,7 +1278,7 @@ Retrieve Feature functions.
 =begin html
 
 <pre>
-$ref is a testGenomeAnnotationAPI.ObjectReference
+$ref is a testGenAnnoAPI.ObjectReference
 $feature_id_list is a reference to a list where each element is a string
 $return is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
 ObjectReference is a string
@@ -1289,7 +1289,7 @@ ObjectReference is a string
 
 =begin text
 
-$ref is a testGenomeAnnotationAPI.ObjectReference
+$ref is a testGenAnnoAPI.ObjectReference
 $feature_id_list is a reference to a list where each element is a string
 $return is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
 ObjectReference is a string
@@ -1334,7 +1334,7 @@ Retrieve Feature aliases.
     }
 
     my $result = $self->{client}->call($self->{url}, $self->{headers}, {
-	method => "testGenomeAnnotationAPI.get_feature_aliases",
+	method => "testGenAnnoAPI.get_feature_aliases",
 	params => \@args,
     });
     if ($result) {
@@ -1368,7 +1368,7 @@ Retrieve Feature aliases.
 =begin html
 
 <pre>
-$ref is a testGenomeAnnotationAPI.ObjectReference
+$ref is a testGenAnnoAPI.ObjectReference
 $gene_id_list is a reference to a list where each element is a string
 $return is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
 ObjectReference is a string
@@ -1379,7 +1379,7 @@ ObjectReference is a string
 
 =begin text
 
-$ref is a testGenomeAnnotationAPI.ObjectReference
+$ref is a testGenAnnoAPI.ObjectReference
 $gene_id_list is a reference to a list where each element is a string
 $return is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
 ObjectReference is a string
@@ -1424,7 +1424,7 @@ Retrieves coding sequence Features (cds) for given gene Feature IDs.
     }
 
     my $result = $self->{client}->call($self->{url}, $self->{headers}, {
-	method => "testGenomeAnnotationAPI.get_cds_by_gene",
+	method => "testGenAnnoAPI.get_cds_by_gene",
 	params => \@args,
     });
     if ($result) {
@@ -1458,7 +1458,7 @@ Retrieves coding sequence Features (cds) for given gene Feature IDs.
 =begin html
 
 <pre>
-$ref is a testGenomeAnnotationAPI.ObjectReference
+$ref is a testGenAnnoAPI.ObjectReference
 $mrna_id_list is a reference to a list where each element is a string
 $return is a reference to a hash where the key is a string and the value is a string
 ObjectReference is a string
@@ -1469,7 +1469,7 @@ ObjectReference is a string
 
 =begin text
 
-$ref is a testGenomeAnnotationAPI.ObjectReference
+$ref is a testGenAnnoAPI.ObjectReference
 $mrna_id_list is a reference to a list where each element is a string
 $return is a reference to a hash where the key is a string and the value is a string
 ObjectReference is a string
@@ -1514,7 +1514,7 @@ Retrieves coding sequence (cds) Feature IDs for given mRNA Feature IDs.
     }
 
     my $result = $self->{client}->call($self->{url}, $self->{headers}, {
-	method => "testGenomeAnnotationAPI.get_cds_by_mrna",
+	method => "testGenAnnoAPI.get_cds_by_mrna",
 	params => \@args,
     });
     if ($result) {
@@ -1548,7 +1548,7 @@ Retrieves coding sequence (cds) Feature IDs for given mRNA Feature IDs.
 =begin html
 
 <pre>
-$ref is a testGenomeAnnotationAPI.ObjectReference
+$ref is a testGenAnnoAPI.ObjectReference
 $cds_id_list is a reference to a list where each element is a string
 $return is a reference to a hash where the key is a string and the value is a string
 ObjectReference is a string
@@ -1559,7 +1559,7 @@ ObjectReference is a string
 
 =begin text
 
-$ref is a testGenomeAnnotationAPI.ObjectReference
+$ref is a testGenAnnoAPI.ObjectReference
 $cds_id_list is a reference to a list where each element is a string
 $return is a reference to a hash where the key is a string and the value is a string
 ObjectReference is a string
@@ -1604,7 +1604,7 @@ Retrieves gene Feature IDs for given coding sequence (cds) Feature IDs.
     }
 
     my $result = $self->{client}->call($self->{url}, $self->{headers}, {
-	method => "testGenomeAnnotationAPI.get_gene_by_cds",
+	method => "testGenAnnoAPI.get_gene_by_cds",
 	params => \@args,
     });
     if ($result) {
@@ -1638,7 +1638,7 @@ Retrieves gene Feature IDs for given coding sequence (cds) Feature IDs.
 =begin html
 
 <pre>
-$ref is a testGenomeAnnotationAPI.ObjectReference
+$ref is a testGenAnnoAPI.ObjectReference
 $mrna_id_list is a reference to a list where each element is a string
 $return is a reference to a hash where the key is a string and the value is a string
 ObjectReference is a string
@@ -1649,7 +1649,7 @@ ObjectReference is a string
 
 =begin text
 
-$ref is a testGenomeAnnotationAPI.ObjectReference
+$ref is a testGenAnnoAPI.ObjectReference
 $mrna_id_list is a reference to a list where each element is a string
 $return is a reference to a hash where the key is a string and the value is a string
 ObjectReference is a string
@@ -1694,7 +1694,7 @@ Retrieves gene Feature IDs for given mRNA Feature IDs.
     }
 
     my $result = $self->{client}->call($self->{url}, $self->{headers}, {
-	method => "testGenomeAnnotationAPI.get_gene_by_mrna",
+	method => "testGenAnnoAPI.get_gene_by_mrna",
 	params => \@args,
     });
     if ($result) {
@@ -1728,7 +1728,7 @@ Retrieves gene Feature IDs for given mRNA Feature IDs.
 =begin html
 
 <pre>
-$ref is a testGenomeAnnotationAPI.ObjectReference
+$ref is a testGenAnnoAPI.ObjectReference
 $cds_id_list is a reference to a list where each element is a string
 $return is a reference to a hash where the key is a string and the value is a string
 ObjectReference is a string
@@ -1739,7 +1739,7 @@ ObjectReference is a string
 
 =begin text
 
-$ref is a testGenomeAnnotationAPI.ObjectReference
+$ref is a testGenAnnoAPI.ObjectReference
 $cds_id_list is a reference to a list where each element is a string
 $return is a reference to a hash where the key is a string and the value is a string
 ObjectReference is a string
@@ -1784,7 +1784,7 @@ Retrieves mRNA Features for given coding sequences (cds) Feature IDs.
     }
 
     my $result = $self->{client}->call($self->{url}, $self->{headers}, {
-	method => "testGenomeAnnotationAPI.get_mrna_by_cds",
+	method => "testGenAnnoAPI.get_mrna_by_cds",
 	params => \@args,
     });
     if ($result) {
@@ -1818,7 +1818,7 @@ Retrieves mRNA Features for given coding sequences (cds) Feature IDs.
 =begin html
 
 <pre>
-$ref is a testGenomeAnnotationAPI.ObjectReference
+$ref is a testGenAnnoAPI.ObjectReference
 $gene_id_list is a reference to a list where each element is a string
 $return is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
 ObjectReference is a string
@@ -1829,7 +1829,7 @@ ObjectReference is a string
 
 =begin text
 
-$ref is a testGenomeAnnotationAPI.ObjectReference
+$ref is a testGenAnnoAPI.ObjectReference
 $gene_id_list is a reference to a list where each element is a string
 $return is a reference to a hash where the key is a string and the value is a reference to a list where each element is a string
 ObjectReference is a string
@@ -1874,7 +1874,7 @@ Retrieve the mRNA IDs for given gene IDs.
     }
 
     my $result = $self->{client}->call($self->{url}, $self->{headers}, {
-	method => "testGenomeAnnotationAPI.get_mrna_by_gene",
+	method => "testGenAnnoAPI.get_mrna_by_gene",
 	params => \@args,
     });
     if ($result) {
@@ -1908,12 +1908,12 @@ Retrieve the mRNA IDs for given gene IDs.
 =begin html
 
 <pre>
-$ref is a testGenomeAnnotationAPI.ObjectReference
+$ref is a testGenAnnoAPI.ObjectReference
 $mrna_id_list is a reference to a list where each element is a string
-$return is a reference to a hash where the key is a string and the value is a reference to a list where each element is a testGenomeAnnotationAPI.Exon_data
+$return is a reference to a hash where the key is a string and the value is a reference to a list where each element is a testGenAnnoAPI.Exon_data
 ObjectReference is a string
 Exon_data is a reference to a hash where the following keys are defined:
-	exon_location has a value which is a testGenomeAnnotationAPI.Region
+	exon_location has a value which is a testGenAnnoAPI.Region
 	exon_dna_sequence has a value which is a string
 	exon_ordinal has a value which is an int
 Region is a reference to a hash where the following keys are defined:
@@ -1928,12 +1928,12 @@ Region is a reference to a hash where the following keys are defined:
 
 =begin text
 
-$ref is a testGenomeAnnotationAPI.ObjectReference
+$ref is a testGenAnnoAPI.ObjectReference
 $mrna_id_list is a reference to a list where each element is a string
-$return is a reference to a hash where the key is a string and the value is a reference to a list where each element is a testGenomeAnnotationAPI.Exon_data
+$return is a reference to a hash where the key is a string and the value is a reference to a list where each element is a testGenAnnoAPI.Exon_data
 ObjectReference is a string
 Exon_data is a reference to a hash where the following keys are defined:
-	exon_location has a value which is a testGenomeAnnotationAPI.Region
+	exon_location has a value which is a testGenAnnoAPI.Region
 	exon_dna_sequence has a value which is a string
 	exon_ordinal has a value which is an int
 Region is a reference to a hash where the following keys are defined:
@@ -1982,7 +1982,7 @@ Retrieve Exon information for each mRNA ID.
     }
 
     my $result = $self->{client}->call($self->{url}, $self->{headers}, {
-	method => "testGenomeAnnotationAPI.get_mrna_exons",
+	method => "testGenAnnoAPI.get_mrna_exons",
 	params => \@args,
     });
     if ($result) {
@@ -2016,12 +2016,12 @@ Retrieve Exon information for each mRNA ID.
 =begin html
 
 <pre>
-$ref is a testGenomeAnnotationAPI.ObjectReference
+$ref is a testGenAnnoAPI.ObjectReference
 $mrna_id_list is a reference to a list where each element is a string
-$return is a reference to a hash where the key is a string and the value is a reference to a hash where the key is a string and the value is a testGenomeAnnotationAPI.UTR_data
+$return is a reference to a hash where the key is a string and the value is a reference to a hash where the key is a string and the value is a testGenAnnoAPI.UTR_data
 ObjectReference is a string
 UTR_data is a reference to a hash where the following keys are defined:
-	utr_locations has a value which is a reference to a list where each element is a testGenomeAnnotationAPI.Region
+	utr_locations has a value which is a reference to a list where each element is a testGenAnnoAPI.Region
 	utr_dna_sequence has a value which is a string
 Region is a reference to a hash where the following keys are defined:
 	contig_id has a value which is a string
@@ -2035,12 +2035,12 @@ Region is a reference to a hash where the following keys are defined:
 
 =begin text
 
-$ref is a testGenomeAnnotationAPI.ObjectReference
+$ref is a testGenAnnoAPI.ObjectReference
 $mrna_id_list is a reference to a list where each element is a string
-$return is a reference to a hash where the key is a string and the value is a reference to a hash where the key is a string and the value is a testGenomeAnnotationAPI.UTR_data
+$return is a reference to a hash where the key is a string and the value is a reference to a hash where the key is a string and the value is a testGenAnnoAPI.UTR_data
 ObjectReference is a string
 UTR_data is a reference to a hash where the following keys are defined:
-	utr_locations has a value which is a reference to a list where each element is a testGenomeAnnotationAPI.Region
+	utr_locations has a value which is a reference to a list where each element is a testGenAnnoAPI.Region
 	utr_dna_sequence has a value which is a string
 Region is a reference to a hash where the following keys are defined:
 	contig_id has a value which is a string
@@ -2101,7 +2101,7 @@ both 5' and 3' UTRs::
     }
 
     my $result = $self->{client}->call($self->{url}, $self->{headers}, {
-	method => "testGenomeAnnotationAPI.get_mrna_utrs",
+	method => "testGenAnnoAPI.get_mrna_utrs",
 	params => \@args,
     });
     if ($result) {
@@ -2127,7 +2127,7 @@ both 5' and 3' UTRs::
 sub version {
     my ($self) = @_;
     my $result = $self->{client}->call($self->{url}, $self->{headers}, {
-        method => "testGenomeAnnotationAPI.version",
+        method => "testGenAnnoAPI.version",
         params => [],
     });
     if ($result) {
@@ -2170,10 +2170,10 @@ sub _validate_version {
         );
     }
     if ($sMinor > $cMinor) {
-        warn "New client version available for testGenomeAnnotationAPI::testGenomeAnnotationAPIClient\n";
+        warn "New client version available for testGenAnnoAPI::testGenAnnoAPIClient\n";
     }
     if ($sMajor == 0) {
-        warn "testGenomeAnnotationAPI::testGenomeAnnotationAPIClient version is $svr_version. API subject to change.\n";
+        warn "testGenAnnoAPI::testGenAnnoAPIClient version is $svr_version. API subject to change.\n";
     }
 }
 
@@ -2262,7 +2262,7 @@ length has a value which is an int
 <pre>
 a reference to a hash where the following keys are defined:
 type_list has a value which is a reference to a list where each element is a string
-region_list has a value which is a reference to a list where each element is a testGenomeAnnotationAPI.Region
+region_list has a value which is a reference to a list where each element is a testGenAnnoAPI.Region
 function_list has a value which is a reference to a list where each element is a string
 alias_list has a value which is a reference to a list where each element is a string
 
@@ -2274,7 +2274,7 @@ alias_list has a value which is a reference to a list where each element is a st
 
 a reference to a hash where the following keys are defined:
 type_list has a value which is a reference to a list where each element is a string
-region_list has a value which is a reference to a list where each element is a testGenomeAnnotationAPI.Region
+region_list has a value which is a reference to a list where each element is a testGenAnnoAPI.Region
 function_list has a value which is a reference to a list where each element is a string
 alias_list has a value which is a reference to a list where each element is a string
 
@@ -2340,7 +2340,7 @@ feature_aliases has a value which is a reference to a hash where the key is a st
 feature_dna_sequence_length has a value which is an int
 feature_dna_sequence has a value which is a string
 feature_md5 has a value which is a string
-feature_locations has a value which is a reference to a list where each element is a testGenomeAnnotationAPI.Region
+feature_locations has a value which is a reference to a list where each element is a testGenAnnoAPI.Region
 feature_publications has a value which is a reference to a list where each element is a string
 feature_quality_warnings has a value which is a reference to a list where each element is a string
 feature_quality_score has a value which is a reference to a list where each element is a string
@@ -2361,7 +2361,7 @@ feature_aliases has a value which is a reference to a hash where the key is a st
 feature_dna_sequence_length has a value which is an int
 feature_dna_sequence has a value which is a string
 feature_md5 has a value which is a string
-feature_locations has a value which is a reference to a list where each element is a testGenomeAnnotationAPI.Region
+feature_locations has a value which is a reference to a list where each element is a testGenAnnoAPI.Region
 feature_publications has a value which is a reference to a list where each element is a string
 feature_quality_warnings has a value which is a reference to a list where each element is a string
 feature_quality_score has a value which is a reference to a list where each element is a string
@@ -2427,7 +2427,7 @@ protein_domain_locations has a value which is a reference to a list where each e
 
 <pre>
 a reference to a hash where the following keys are defined:
-exon_location has a value which is a testGenomeAnnotationAPI.Region
+exon_location has a value which is a testGenAnnoAPI.Region
 exon_dna_sequence has a value which is a string
 exon_ordinal has a value which is an int
 
@@ -2438,7 +2438,7 @@ exon_ordinal has a value which is an int
 =begin text
 
 a reference to a hash where the following keys are defined:
-exon_location has a value which is a testGenomeAnnotationAPI.Region
+exon_location has a value which is a testGenAnnoAPI.Region
 exon_dna_sequence has a value which is a string
 exon_ordinal has a value which is an int
 
@@ -2461,7 +2461,7 @@ exon_ordinal has a value which is an int
 
 <pre>
 a reference to a hash where the following keys are defined:
-utr_locations has a value which is a reference to a list where each element is a testGenomeAnnotationAPI.Region
+utr_locations has a value which is a reference to a list where each element is a testGenAnnoAPI.Region
 utr_dna_sequence has a value which is a string
 
 </pre>
@@ -2471,7 +2471,7 @@ utr_dna_sequence has a value which is a string
 =begin text
 
 a reference to a hash where the following keys are defined:
-utr_locations has a value which is a reference to a list where each element is a testGenomeAnnotationAPI.Region
+utr_locations has a value which is a reference to a list where each element is a testGenAnnoAPI.Region
 utr_dna_sequence has a value which is a string
 
 
@@ -2483,7 +2483,7 @@ utr_dna_sequence has a value which is a string
 
 =cut
 
-package testGenomeAnnotationAPI::testGenomeAnnotationAPIClient::RpcClient;
+package testGenAnnoAPI::testGenAnnoAPIClient::RpcClient;
 use base 'JSON::RPC::Client';
 use POSIX;
 use strict;

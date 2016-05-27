@@ -103,7 +103,7 @@ class _JSONObjectEncoder(_json.JSONEncoder):
         return _json.JSONEncoder.default(self, obj)
 
 
-class testGenomeAnnotationAPI(object):
+class testGenAnnoAPI(object):
 
     def __init__(self, url=None, timeout=30 * 60, user_id=None,
                  password=None, token=None, ignore_authrc=False,
@@ -174,147 +174,147 @@ class testGenomeAnnotationAPI(object):
     def get_taxon(self, ref, json_rpc_context = None):
         if json_rpc_context and type(json_rpc_context) is not dict:
             raise ValueError('Method get_taxon: argument json_rpc_context is not type dict as required.')
-        resp = self._call('testGenomeAnnotationAPI.get_taxon',
+        resp = self._call('testGenAnnoAPI.get_taxon',
                           [ref], json_rpc_context)
         return resp[0]
   
     def get_assembly(self, ref, json_rpc_context = None):
         if json_rpc_context and type(json_rpc_context) is not dict:
             raise ValueError('Method get_assembly: argument json_rpc_context is not type dict as required.')
-        resp = self._call('testGenomeAnnotationAPI.get_assembly',
+        resp = self._call('testGenAnnoAPI.get_assembly',
                           [ref], json_rpc_context)
         return resp[0]
   
     def get_feature_types(self, ref, json_rpc_context = None):
         if json_rpc_context and type(json_rpc_context) is not dict:
             raise ValueError('Method get_feature_types: argument json_rpc_context is not type dict as required.')
-        resp = self._call('testGenomeAnnotationAPI.get_feature_types',
+        resp = self._call('testGenAnnoAPI.get_feature_types',
                           [ref], json_rpc_context)
         return resp[0]
   
     def get_feature_type_descriptions(self, ref, feature_type_list, json_rpc_context = None):
         if json_rpc_context and type(json_rpc_context) is not dict:
             raise ValueError('Method get_feature_type_descriptions: argument json_rpc_context is not type dict as required.')
-        resp = self._call('testGenomeAnnotationAPI.get_feature_type_descriptions',
+        resp = self._call('testGenAnnoAPI.get_feature_type_descriptions',
                           [ref, feature_type_list], json_rpc_context)
         return resp[0]
   
     def get_feature_type_counts(self, ref, feature_type_list, json_rpc_context = None):
         if json_rpc_context and type(json_rpc_context) is not dict:
             raise ValueError('Method get_feature_type_counts: argument json_rpc_context is not type dict as required.')
-        resp = self._call('testGenomeAnnotationAPI.get_feature_type_counts',
+        resp = self._call('testGenAnnoAPI.get_feature_type_counts',
                           [ref, feature_type_list], json_rpc_context)
         return resp[0]
   
     def get_feature_ids(self, ref, filters, group_type, json_rpc_context = None):
         if json_rpc_context and type(json_rpc_context) is not dict:
             raise ValueError('Method get_feature_ids: argument json_rpc_context is not type dict as required.')
-        resp = self._call('testGenomeAnnotationAPI.get_feature_ids',
+        resp = self._call('testGenAnnoAPI.get_feature_ids',
                           [ref, filters, group_type], json_rpc_context)
         return resp[0]
   
     def get_features(self, ref, feature_id_list, json_rpc_context = None):
         if json_rpc_context and type(json_rpc_context) is not dict:
             raise ValueError('Method get_features: argument json_rpc_context is not type dict as required.')
-        resp = self._call('testGenomeAnnotationAPI.get_features',
+        resp = self._call('testGenAnnoAPI.get_features',
                           [ref, feature_id_list], json_rpc_context)
         return resp[0]
   
     def get_proteins(self, ref, json_rpc_context = None):
         if json_rpc_context and type(json_rpc_context) is not dict:
             raise ValueError('Method get_proteins: argument json_rpc_context is not type dict as required.')
-        resp = self._call('testGenomeAnnotationAPI.get_proteins',
+        resp = self._call('testGenAnnoAPI.get_proteins',
                           [ref], json_rpc_context)
         return resp[0]
   
     def get_feature_locations(self, ref, feature_id_list, json_rpc_context = None):
         if json_rpc_context and type(json_rpc_context) is not dict:
             raise ValueError('Method get_feature_locations: argument json_rpc_context is not type dict as required.')
-        resp = self._call('testGenomeAnnotationAPI.get_feature_locations',
+        resp = self._call('testGenAnnoAPI.get_feature_locations',
                           [ref, feature_id_list], json_rpc_context)
         return resp[0]
   
     def get_feature_publications(self, ref, feature_id_list, json_rpc_context = None):
         if json_rpc_context and type(json_rpc_context) is not dict:
             raise ValueError('Method get_feature_publications: argument json_rpc_context is not type dict as required.')
-        resp = self._call('testGenomeAnnotationAPI.get_feature_publications',
+        resp = self._call('testGenAnnoAPI.get_feature_publications',
                           [ref, feature_id_list], json_rpc_context)
         return resp[0]
   
     def get_feature_dna(self, ref, feature_id_list, json_rpc_context = None):
         if json_rpc_context and type(json_rpc_context) is not dict:
             raise ValueError('Method get_feature_dna: argument json_rpc_context is not type dict as required.')
-        resp = self._call('testGenomeAnnotationAPI.get_feature_dna',
+        resp = self._call('testGenAnnoAPI.get_feature_dna',
                           [ref, feature_id_list], json_rpc_context)
         return resp[0]
   
     def get_feature_functions(self, ref, feature_id_list, json_rpc_context = None):
         if json_rpc_context and type(json_rpc_context) is not dict:
             raise ValueError('Method get_feature_functions: argument json_rpc_context is not type dict as required.')
-        resp = self._call('testGenomeAnnotationAPI.get_feature_functions',
+        resp = self._call('testGenAnnoAPI.get_feature_functions',
                           [ref, feature_id_list], json_rpc_context)
         return resp[0]
   
     def get_feature_aliases(self, ref, feature_id_list, json_rpc_context = None):
         if json_rpc_context and type(json_rpc_context) is not dict:
             raise ValueError('Method get_feature_aliases: argument json_rpc_context is not type dict as required.')
-        resp = self._call('testGenomeAnnotationAPI.get_feature_aliases',
+        resp = self._call('testGenAnnoAPI.get_feature_aliases',
                           [ref, feature_id_list], json_rpc_context)
         return resp[0]
   
     def get_cds_by_gene(self, ref, gene_id_list, json_rpc_context = None):
         if json_rpc_context and type(json_rpc_context) is not dict:
             raise ValueError('Method get_cds_by_gene: argument json_rpc_context is not type dict as required.')
-        resp = self._call('testGenomeAnnotationAPI.get_cds_by_gene',
+        resp = self._call('testGenAnnoAPI.get_cds_by_gene',
                           [ref, gene_id_list], json_rpc_context)
         return resp[0]
   
     def get_cds_by_mrna(self, ref, mrna_id_list, json_rpc_context = None):
         if json_rpc_context and type(json_rpc_context) is not dict:
             raise ValueError('Method get_cds_by_mrna: argument json_rpc_context is not type dict as required.')
-        resp = self._call('testGenomeAnnotationAPI.get_cds_by_mrna',
+        resp = self._call('testGenAnnoAPI.get_cds_by_mrna',
                           [ref, mrna_id_list], json_rpc_context)
         return resp[0]
   
     def get_gene_by_cds(self, ref, cds_id_list, json_rpc_context = None):
         if json_rpc_context and type(json_rpc_context) is not dict:
             raise ValueError('Method get_gene_by_cds: argument json_rpc_context is not type dict as required.')
-        resp = self._call('testGenomeAnnotationAPI.get_gene_by_cds',
+        resp = self._call('testGenAnnoAPI.get_gene_by_cds',
                           [ref, cds_id_list], json_rpc_context)
         return resp[0]
   
     def get_gene_by_mrna(self, ref, mrna_id_list, json_rpc_context = None):
         if json_rpc_context and type(json_rpc_context) is not dict:
             raise ValueError('Method get_gene_by_mrna: argument json_rpc_context is not type dict as required.')
-        resp = self._call('testGenomeAnnotationAPI.get_gene_by_mrna',
+        resp = self._call('testGenAnnoAPI.get_gene_by_mrna',
                           [ref, mrna_id_list], json_rpc_context)
         return resp[0]
   
     def get_mrna_by_cds(self, ref, cds_id_list, json_rpc_context = None):
         if json_rpc_context and type(json_rpc_context) is not dict:
             raise ValueError('Method get_mrna_by_cds: argument json_rpc_context is not type dict as required.')
-        resp = self._call('testGenomeAnnotationAPI.get_mrna_by_cds',
+        resp = self._call('testGenAnnoAPI.get_mrna_by_cds',
                           [ref, cds_id_list], json_rpc_context)
         return resp[0]
   
     def get_mrna_by_gene(self, ref, gene_id_list, json_rpc_context = None):
         if json_rpc_context and type(json_rpc_context) is not dict:
             raise ValueError('Method get_mrna_by_gene: argument json_rpc_context is not type dict as required.')
-        resp = self._call('testGenomeAnnotationAPI.get_mrna_by_gene',
+        resp = self._call('testGenAnnoAPI.get_mrna_by_gene',
                           [ref, gene_id_list], json_rpc_context)
         return resp[0]
   
     def get_mrna_exons(self, ref, mrna_id_list, json_rpc_context = None):
         if json_rpc_context and type(json_rpc_context) is not dict:
             raise ValueError('Method get_mrna_exons: argument json_rpc_context is not type dict as required.')
-        resp = self._call('testGenomeAnnotationAPI.get_mrna_exons',
+        resp = self._call('testGenAnnoAPI.get_mrna_exons',
                           [ref, mrna_id_list], json_rpc_context)
         return resp[0]
   
     def get_mrna_utrs(self, ref, mrna_id_list, json_rpc_context = None):
         if json_rpc_context and type(json_rpc_context) is not dict:
             raise ValueError('Method get_mrna_utrs: argument json_rpc_context is not type dict as required.')
-        resp = self._call('testGenomeAnnotationAPI.get_mrna_utrs',
+        resp = self._call('testGenAnnoAPI.get_mrna_utrs',
                           [ref, mrna_id_list], json_rpc_context)
         return resp[0]
  

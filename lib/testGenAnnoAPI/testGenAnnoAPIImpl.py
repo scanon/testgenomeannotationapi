@@ -6,10 +6,10 @@ import logging
 #END_HEADER
 
 
-class testGenomeAnnotationAPI:
+class testGenAnnoAPI:
     '''
     Module Name:
-    testGenomeAnnotationAPI
+    testGenAnnoAPI
 
     Module Description:
     
@@ -22,8 +22,8 @@ class testGenomeAnnotationAPI:
     # the latter method is running.
     #########################################
     VERSION = "0.0.1"
-    GIT_URL = ""
-    GIT_COMMIT_HASH = ""
+    GIT_URL = "git@github.com:scanon/testgenomeannotationapi.git"
+    GIT_COMMIT_HASH = "8245ff789c3d6150d7ff4b40d1afd537d522d25d"
     
     #BEGIN_CLASS_HEADER
     workspaceURL = None

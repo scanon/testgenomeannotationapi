@@ -1,5 +1,5 @@
 module-name:
-    testGenomeAnnotationAPI
+    testGenAnnoAPI
 
 module-description:
     A KBase module

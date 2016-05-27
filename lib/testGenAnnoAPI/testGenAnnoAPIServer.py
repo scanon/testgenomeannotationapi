@@ -37,14 +37,14 @@ def get_config():
     retconfig = {}
     config = ConfigParser()
     config.read(get_config_file())
-    for nameval in config.items(get_service_name() or 'testGenomeAnnotationAPI'):
+    for nameval in config.items(get_service_name() or 'testGenAnnoAPI'):
         retconfig[nameval[0]] = nameval[1]
     return retconfig
 
 config = get_config()
 
-from testGenomeAnnotationAPI.testGenomeAnnotationAPIImpl import testGenomeAnnotationAPI
-impl_testGenomeAnnotationAPI = testGenomeAnnotationAPI(config)
+from testGenAnnoAPI.testGenAnnoAPIImpl import testGenAnnoAPI
+impl_testGenAnnoAPI = testGenAnnoAPI(config)
 
 
 class JSONObjectEncoder(json.JSONEncoder):
@@ -61,69 +61,69 @@ class JSONObjectEncoder(json.JSONEncoder):
 sync_methods = {}
 async_run_methods = {}
 async_check_methods = {}
-async_run_methods['testGenomeAnnotationAPI.get_taxon_async'] = ['testGenomeAnnotationAPI', 'get_taxon']
-async_check_methods['testGenomeAnnotationAPI.get_taxon_check'] = ['testGenomeAnnotationAPI', 'get_taxon']
-sync_methods['testGenomeAnnotationAPI.get_taxon'] = True
-async_run_methods['testGenomeAnnotationAPI.get_assembly_async'] = ['testGenomeAnnotationAPI', 'get_assembly']
-async_check_methods['testGenomeAnnotationAPI.get_assembly_check'] = ['testGenomeAnnotationAPI', 'get_assembly']
-sync_methods['testGenomeAnnotationAPI.get_assembly'] = True
-async_run_methods['testGenomeAnnotationAPI.get_feature_types_async'] = ['testGenomeAnnotationAPI', 'get_feature_types']
-async_check_methods['testGenomeAnnotationAPI.get_feature_types_check'] = ['testGenomeAnnotationAPI', 'get_feature_types']
-sync_methods['testGenomeAnnotationAPI.get_feature_types'] = True
-async_run_methods['testGenomeAnnotationAPI.get_feature_type_descriptions_async'] = ['testGenomeAnnotationAPI', 'get_feature_type_descriptions']
-async_check_methods['testGenomeAnnotationAPI.get_feature_type_descriptions_check'] = ['testGenomeAnnotationAPI', 'get_feature_type_descriptions']
-sync_methods['testGenomeAnnotationAPI.get_feature_type_descriptions'] = True
-async_run_methods['testGenomeAnnotationAPI.get_feature_type_counts_async'] = ['testGenomeAnnotationAPI', 'get_feature_type_counts']
-async_check_methods['testGenomeAnnotationAPI.get_feature_type_counts_check'] = ['testGenomeAnnotationAPI', 'get_feature_type_counts']
-sync_methods['testGenomeAnnotationAPI.get_feature_type_counts'] = True
-async_run_methods['testGenomeAnnotationAPI.get_feature_ids_async'] = ['testGenomeAnnotationAPI', 'get_feature_ids']
-async_check_methods['testGenomeAnnotationAPI.get_feature_ids_check'] = ['testGenomeAnnotationAPI', 'get_feature_ids']
-sync_methods['testGenomeAnnotationAPI.get_feature_ids'] = True
-async_run_methods['testGenomeAnnotationAPI.get_features_async'] = ['testGenomeAnnotationAPI', 'get_features']
-async_check_methods['testGenomeAnnotationAPI.get_features_check'] = ['testGenomeAnnotationAPI', 'get_features']
-sync_methods['testGenomeAnnotationAPI.get_features'] = True
-async_run_methods['testGenomeAnnotationAPI.get_proteins_async'] = ['testGenomeAnnotationAPI', 'get_proteins']
-async_check_methods['testGenomeAnnotationAPI.get_proteins_check'] = ['testGenomeAnnotationAPI', 'get_proteins']
-sync_methods['testGenomeAnnotationAPI.get_proteins'] = True
-async_run_methods['testGenomeAnnotationAPI.get_feature_locations_async'] = ['testGenomeAnnotationAPI', 'get_feature_locations']
-async_check_methods['testGenomeAnnotationAPI.get_feature_locations_check'] = ['testGenomeAnnotationAPI', 'get_feature_locations']
-sync_methods['testGenomeAnnotationAPI.get_feature_locations'] = True
-async_run_methods['testGenomeAnnotationAPI.get_feature_publications_async'] = ['testGenomeAnnotationAPI', 'get_feature_publications']
-async_check_methods['testGenomeAnnotationAPI.get_feature_publications_check'] = ['testGenomeAnnotationAPI', 'get_feature_publications']
-sync_methods['testGenomeAnnotationAPI.get_feature_publications'] = True
-async_run_methods['testGenomeAnnotationAPI.get_feature_dna_async'] = ['testGenomeAnnotationAPI', 'get_feature_dna']
-async_check_methods['testGenomeAnnotationAPI.get_feature_dna_check'] = ['testGenomeAnnotationAPI', 'get_feature_dna']
-sync_methods['testGenomeAnnotationAPI.get_feature_dna'] = True
-async_run_methods['testGenomeAnnotationAPI.get_feature_functions_async'] = ['testGenomeAnnotationAPI', 'get_feature_functions']
-async_check_methods['testGenomeAnnotationAPI.get_feature_functions_check'] = ['testGenomeAnnotationAPI', 'get_feature_functions']
-sync_methods['testGenomeAnnotationAPI.get_feature_functions'] = True
-async_run_methods['testGenomeAnnotationAPI.get_feature_aliases_async'] = ['testGenomeAnnotationAPI', 'get_feature_aliases']
-async_check_methods['testGenomeAnnotationAPI.get_feature_aliases_check'] = ['testGenomeAnnotationAPI', 'get_feature_aliases']
-sync_methods['testGenomeAnnotationAPI.get_feature_aliases'] = True
-async_run_methods['testGenomeAnnotationAPI.get_cds_by_gene_async'] = ['testGenomeAnnotationAPI', 'get_cds_by_gene']
-async_check_methods['testGenomeAnnotationAPI.get_cds_by_gene_check'] = ['testGenomeAnnotationAPI', 'get_cds_by_gene']
-sync_methods['testGenomeAnnotationAPI.get_cds_by_gene'] = True
-async_run_methods['testGenomeAnnotationAPI.get_cds_by_mrna_async'] = ['testGenomeAnnotationAPI', 'get_cds_by_mrna']
-async_check_methods['testGenomeAnnotationAPI.get_cds_by_mrna_check'] = ['testGenomeAnnotationAPI', 'get_cds_by_mrna']
-sync_methods['testGenomeAnnotationAPI.get_cds_by_mrna'] = True
-async_run_methods['testGenomeAnnotationAPI.get_gene_by_cds_async'] = ['testGenomeAnnotationAPI', 'get_gene_by_cds']
-async_check_methods['testGenomeAnnotationAPI.get_gene_by_cds_check'] = ['testGenomeAnnotationAPI', 'get_gene_by_cds']
-sync_methods['testGenomeAnnotationAPI.get_gene_by_cds'] = True
-async_run_methods['testGenomeAnnotationAPI.get_gene_by_mrna_async'] = ['testGenomeAnnotationAPI', 'get_gene_by_mrna']
-async_check_methods['testGenomeAnnotationAPI.get_gene_by_mrna_check'] = ['testGenomeAnnotationAPI', 'get_gene_by_mrna']
-sync_methods['testGenomeAnnotationAPI.get_gene_by_mrna'] = True
-async_run_methods['testGenomeAnnotationAPI.get_mrna_by_cds_async'] = ['testGenomeAnnotationAPI', 'get_mrna_by_cds']
-async_check_methods['testGenomeAnnotationAPI.get_mrna_by_cds_check'] = ['testGenomeAnnotationAPI', 'get_mrna_by_cds']
-sync_methods['testGenomeAnnotationAPI.get_mrna_by_cds'] = True
-async_run_methods['testGenomeAnnotationAPI.get_mrna_by_gene_async'] = ['testGenomeAnnotationAPI', 'get_mrna_by_gene']
-async_check_methods['testGenomeAnnotationAPI.get_mrna_by_gene_check'] = ['testGenomeAnnotationAPI', 'get_mrna_by_gene']
-sync_methods['testGenomeAnnotationAPI.get_mrna_by_gene'] = True
-async_run_methods['testGenomeAnnotationAPI.get_mrna_exons_async'] = ['testGenomeAnnotationAPI', 'get_mrna_exons']
-async_check_methods['testGenomeAnnotationAPI.get_mrna_exons_check'] = ['testGenomeAnnotationAPI', 'get_mrna_exons']
-sync_methods['testGenomeAnnotationAPI.get_mrna_exons'] = True
-async_run_methods['testGenomeAnnotationAPI.get_mrna_utrs_async'] = ['testGenomeAnnotationAPI', 'get_mrna_utrs']
-async_check_methods['testGenomeAnnotationAPI.get_mrna_utrs_check'] = ['testGenomeAnnotationAPI', 'get_mrna_utrs']
-sync_methods['testGenomeAnnotationAPI.get_mrna_utrs'] = True
+async_run_methods['testGenAnnoAPI.get_taxon_async'] = ['testGenAnnoAPI', 'get_taxon']
+async_check_methods['testGenAnnoAPI.get_taxon_check'] = ['testGenAnnoAPI', 'get_taxon']
+sync_methods['testGenAnnoAPI.get_taxon'] = True
+async_run_methods['testGenAnnoAPI.get_assembly_async'] = ['testGenAnnoAPI', 'get_assembly']
+async_check_methods['testGenAnnoAPI.get_assembly_check'] = ['testGenAnnoAPI', 'get_assembly']
+sync_methods['testGenAnnoAPI.get_assembly'] = True
+async_run_methods['testGenAnnoAPI.get_feature_types_async'] = ['testGenAnnoAPI', 'get_feature_types']
+async_check_methods['testGenAnnoAPI.get_feature_types_check'] = ['testGenAnnoAPI', 'get_feature_types']
+sync_methods['testGenAnnoAPI.get_feature_types'] = True
+async_run_methods['testGenAnnoAPI.get_feature_type_descriptions_async'] = ['testGenAnnoAPI', 'get_feature_type_descriptions']
+async_check_methods['testGenAnnoAPI.get_feature_type_descriptions_check'] = ['testGenAnnoAPI', 'get_feature_type_descriptions']
+sync_methods['testGenAnnoAPI.get_feature_type_descriptions'] = True
+async_run_methods['testGenAnnoAPI.get_feature_type_counts_async'] = ['testGenAnnoAPI', 'get_feature_type_counts']
+async_check_methods['testGenAnnoAPI.get_feature_type_counts_check'] = ['testGenAnnoAPI', 'get_feature_type_counts']
+sync_methods['testGenAnnoAPI.get_feature_type_counts'] = True
+async_run_methods['testGenAnnoAPI.get_feature_ids_async'] = ['testGenAnnoAPI', 'get_feature_ids']
+async_check_methods['testGenAnnoAPI.get_feature_ids_check'] = ['testGenAnnoAPI', 'get_feature_ids']
+sync_methods['testGenAnnoAPI.get_feature_ids'] = True
+async_run_methods['testGenAnnoAPI.get_features_async'] = ['testGenAnnoAPI', 'get_features']
+async_check_methods['testGenAnnoAPI.get_features_check'] = ['testGenAnnoAPI', 'get_features']
+sync_methods['testGenAnnoAPI.get_features'] = True
+async_run_methods['testGenAnnoAPI.get_proteins_async'] = ['testGenAnnoAPI', 'get_proteins']
+async_check_methods['testGenAnnoAPI.get_proteins_check'] = ['testGenAnnoAPI', 'get_proteins']
+sync_methods['testGenAnnoAPI.get_proteins'] = True
+async_run_methods['testGenAnnoAPI.get_feature_locations_async'] = ['testGenAnnoAPI', 'get_feature_locations']
+async_check_methods['testGenAnnoAPI.get_feature_locations_check'] = ['testGenAnnoAPI', 'get_feature_locations']
+sync_methods['testGenAnnoAPI.get_feature_locations'] = True
+async_run_methods['testGenAnnoAPI.get_feature_publications_async'] = ['testGenAnnoAPI', 'get_feature_publications']
+async_check_methods['testGenAnnoAPI.get_feature_publications_check'] = ['testGenAnnoAPI', 'get_feature_publications']
+sync_methods['testGenAnnoAPI.get_feature_publications'] = True
+async_run_methods['testGenAnnoAPI.get_feature_dna_async'] = ['testGenAnnoAPI', 'get_feature_dna']
+async_check_methods['testGenAnnoAPI.get_feature_dna_check'] = ['testGenAnnoAPI', 'get_feature_dna']
+sync_methods['testGenAnnoAPI.get_feature_dna'] = True
+async_run_methods['testGenAnnoAPI.get_feature_functions_async'] = ['testGenAnnoAPI', 'get_feature_functions']
+async_check_methods['testGenAnnoAPI.get_feature_functions_check'] = ['testGenAnnoAPI', 'get_feature_functions']
+sync_methods['testGenAnnoAPI.get_feature_functions'] = True
+async_run_methods['testGenAnnoAPI.get_feature_aliases_async'] = ['testGenAnnoAPI', 'get_feature_aliases']
+async_check_methods['testGenAnnoAPI.get_feature_aliases_check'] = ['testGenAnnoAPI', 'get_feature_aliases']
+sync_methods['testGenAnnoAPI.get_feature_aliases'] = True
+async_run_methods['testGenAnnoAPI.get_cds_by_gene_async'] = ['testGenAnnoAPI', 'get_cds_by_gene']
+async_check_methods['testGenAnnoAPI.get_cds_by_gene_check'] = ['testGenAnnoAPI', 'get_cds_by_gene']
+sync_methods['testGenAnnoAPI.get_cds_by_gene'] = True
+async_run_methods['testGenAnnoAPI.get_cds_by_mrna_async'] = ['testGenAnnoAPI', 'get_cds_by_mrna']
+async_check_methods['testGenAnnoAPI.get_cds_by_mrna_check'] = ['testGenAnnoAPI', 'get_cds_by_mrna']
+sync_methods['testGenAnnoAPI.get_cds_by_mrna'] = True
+async_run_methods['testGenAnnoAPI.get_gene_by_cds_async'] = ['testGenAnnoAPI', 'get_gene_by_cds']
+async_check_methods['testGenAnnoAPI.get_gene_by_cds_check'] = ['testGenAnnoAPI', 'get_gene_by_cds']
+sync_methods['testGenAnnoAPI.get_gene_by_cds'] = True
+async_run_methods['testGenAnnoAPI.get_gene_by_mrna_async'] = ['testGenAnnoAPI', 'get_gene_by_mrna']
+async_check_methods['testGenAnnoAPI.get_gene_by_mrna_check'] = ['testGenAnnoAPI', 'get_gene_by_mrna']
+sync_methods['testGenAnnoAPI.get_gene_by_mrna'] = True
+async_run_methods['testGenAnnoAPI.get_mrna_by_cds_async'] = ['testGenAnnoAPI', 'get_mrna_by_cds']
+async_check_methods['testGenAnnoAPI.get_mrna_by_cds_check'] = ['testGenAnnoAPI', 'get_mrna_by_cds']
+sync_methods['testGenAnnoAPI.get_mrna_by_cds'] = True
+async_run_methods['testGenAnnoAPI.get_mrna_by_gene_async'] = ['testGenAnnoAPI', 'get_mrna_by_gene']
+async_check_methods['testGenAnnoAPI.get_mrna_by_gene_check'] = ['testGenAnnoAPI', 'get_mrna_by_gene']
+sync_methods['testGenAnnoAPI.get_mrna_by_gene'] = True
+async_run_methods['testGenAnnoAPI.get_mrna_exons_async'] = ['testGenAnnoAPI', 'get_mrna_exons']
+async_check_methods['testGenAnnoAPI.get_mrna_exons_check'] = ['testGenAnnoAPI', 'get_mrna_exons']
+sync_methods['testGenAnnoAPI.get_mrna_exons'] = True
+async_run_methods['testGenAnnoAPI.get_mrna_utrs_async'] = ['testGenAnnoAPI', 'get_mrna_utrs']
+async_check_methods['testGenAnnoAPI.get_mrna_utrs_check'] = ['testGenAnnoAPI', 'get_mrna_utrs']
+sync_methods['testGenAnnoAPI.get_mrna_utrs'] = True
 
 class AsyncJobServiceClient(object):
 
@@ -384,7 +384,7 @@ class Application(object):
                                    context['method'], context['call_id'])
 
     def __init__(self):
-        submod = get_service_name() or 'testGenomeAnnotationAPI'
+        submod = get_service_name() or 'testGenAnnoAPI'
         self.userlog = log.log(
             submod, ip_address=True, authuser=True, module=True, method=True,
             call_id=True, changecallback=self.logcallback,
@@ -395,92 +395,92 @@ class Application(object):
         self.serverlog.set_log_level(6)
         self.rpc_service = JSONRPCServiceCustom()
         self.method_authentication = dict()
-        self.rpc_service.add(impl_testGenomeAnnotationAPI.get_taxon,
-                             name='testGenomeAnnotationAPI.get_taxon',
+        self.rpc_service.add(impl_testGenAnnoAPI.get_taxon,
+                             name='testGenAnnoAPI.get_taxon',
                              types=[basestring])
-        self.method_authentication['testGenomeAnnotationAPI.get_taxon'] = 'required'
-        self.rpc_service.add(impl_testGenomeAnnotationAPI.get_assembly,
-                             name='testGenomeAnnotationAPI.get_assembly',
+        self.method_authentication['testGenAnnoAPI.get_taxon'] = 'required'
+        self.rpc_service.add(impl_testGenAnnoAPI.get_assembly,
+                             name='testGenAnnoAPI.get_assembly',
                              types=[basestring])
-        self.method_authentication['testGenomeAnnotationAPI.get_assembly'] = 'required'
-        self.rpc_service.add(impl_testGenomeAnnotationAPI.get_feature_types,
-                             name='testGenomeAnnotationAPI.get_feature_types',
+        self.method_authentication['testGenAnnoAPI.get_assembly'] = 'required'
+        self.rpc_service.add(impl_testGenAnnoAPI.get_feature_types,
+                             name='testGenAnnoAPI.get_feature_types',
                              types=[basestring])
-        self.method_authentication['testGenomeAnnotationAPI.get_feature_types'] = 'required'
-        self.rpc_service.add(impl_testGenomeAnnotationAPI.get_feature_type_descriptions,
-                             name='testGenomeAnnotationAPI.get_feature_type_descriptions',
+        self.method_authentication['testGenAnnoAPI.get_feature_types'] = 'required'
+        self.rpc_service.add(impl_testGenAnnoAPI.get_feature_type_descriptions,
+                             name='testGenAnnoAPI.get_feature_type_descriptions',
                              types=[basestring, list])
-        self.method_authentication['testGenomeAnnotationAPI.get_feature_type_descriptions'] = 'required'
-        self.rpc_service.add(impl_testGenomeAnnotationAPI.get_feature_type_counts,
-                             name='testGenomeAnnotationAPI.get_feature_type_counts',
+        self.method_authentication['testGenAnnoAPI.get_feature_type_descriptions'] = 'required'
+        self.rpc_service.add(impl_testGenAnnoAPI.get_feature_type_counts,
+                             name='testGenAnnoAPI.get_feature_type_counts',
                              types=[basestring, list])
-        self.method_authentication['testGenomeAnnotationAPI.get_feature_type_counts'] = 'required'
-        self.rpc_service.add(impl_testGenomeAnnotationAPI.get_feature_ids,
-                             name='testGenomeAnnotationAPI.get_feature_ids',
+        self.method_authentication['testGenAnnoAPI.get_feature_type_counts'] = 'required'
+        self.rpc_service.add(impl_testGenAnnoAPI.get_feature_ids,
+                             name='testGenAnnoAPI.get_feature_ids',
                              types=[basestring, dict, basestring])
-        self.method_authentication['testGenomeAnnotationAPI.get_feature_ids'] = 'required'
-        self.rpc_service.add(impl_testGenomeAnnotationAPI.get_features,
-                             name='testGenomeAnnotationAPI.get_features',
+        self.method_authentication['testGenAnnoAPI.get_feature_ids'] = 'required'
+        self.rpc_service.add(impl_testGenAnnoAPI.get_features,
+                             name='testGenAnnoAPI.get_features',
                              types=[basestring, list])
-        self.method_authentication['testGenomeAnnotationAPI.get_features'] = 'required'
-        self.rpc_service.add(impl_testGenomeAnnotationAPI.get_proteins,
-                             name='testGenomeAnnotationAPI.get_proteins',
+        self.method_authentication['testGenAnnoAPI.get_features'] = 'required'
+        self.rpc_service.add(impl_testGenAnnoAPI.get_proteins,
+                             name='testGenAnnoAPI.get_proteins',
                              types=[basestring])
-        self.method_authentication['testGenomeAnnotationAPI.get_proteins'] = 'required'
-        self.rpc_service.add(impl_testGenomeAnnotationAPI.get_feature_locations,
-                             name='testGenomeAnnotationAPI.get_feature_locations',
+        self.method_authentication['testGenAnnoAPI.get_proteins'] = 'required'
+        self.rpc_service.add(impl_testGenAnnoAPI.get_feature_locations,
+                             name='testGenAnnoAPI.get_feature_locations',
                              types=[basestring, list])
-        self.method_authentication['testGenomeAnnotationAPI.get_feature_locations'] = 'required'
-        self.rpc_service.add(impl_testGenomeAnnotationAPI.get_feature_publications,
-                             name='testGenomeAnnotationAPI.get_feature_publications',
+        self.method_authentication['testGenAnnoAPI.get_feature_locations'] = 'required'
+        self.rpc_service.add(impl_testGenAnnoAPI.get_feature_publications,
+                             name='testGenAnnoAPI.get_feature_publications',
                              types=[basestring, list])
-        self.method_authentication['testGenomeAnnotationAPI.get_feature_publications'] = 'required'
-        self.rpc_service.add(impl_testGenomeAnnotationAPI.get_feature_dna,
-                             name='testGenomeAnnotationAPI.get_feature_dna',
+        self.method_authentication['testGenAnnoAPI.get_feature_publications'] = 'required'
+        self.rpc_service.add(impl_testGenAnnoAPI.get_feature_dna,
+                             name='testGenAnnoAPI.get_feature_dna',
                              types=[basestring, list])
-        self.method_authentication['testGenomeAnnotationAPI.get_feature_dna'] = 'required'
-        self.rpc_service.add(impl_testGenomeAnnotationAPI.get_feature_functions,
-                             name='testGenomeAnnotationAPI.get_feature_functions',
+        self.method_authentication['testGenAnnoAPI.get_feature_dna'] = 'required'
+        self.rpc_service.add(impl_testGenAnnoAPI.get_feature_functions,
+                             name='testGenAnnoAPI.get_feature_functions',
                              types=[basestring, list])
-        self.method_authentication['testGenomeAnnotationAPI.get_feature_functions'] = 'required'
-        self.rpc_service.add(impl_testGenomeAnnotationAPI.get_feature_aliases,
-                             name='testGenomeAnnotationAPI.get_feature_aliases',
+        self.method_authentication['testGenAnnoAPI.get_feature_functions'] = 'required'
+        self.rpc_service.add(impl_testGenAnnoAPI.get_feature_aliases,
+                             name='testGenAnnoAPI.get_feature_aliases',
                              types=[basestring, list])
-        self.method_authentication['testGenomeAnnotationAPI.get_feature_aliases'] = 'required'
-        self.rpc_service.add(impl_testGenomeAnnotationAPI.get_cds_by_gene,
-                             name='testGenomeAnnotationAPI.get_cds_by_gene',
+        self.method_authentication['testGenAnnoAPI.get_feature_aliases'] = 'required'
+        self.rpc_service.add(impl_testGenAnnoAPI.get_cds_by_gene,
+                             name='testGenAnnoAPI.get_cds_by_gene',
                              types=[basestring, list])
-        self.method_authentication['testGenomeAnnotationAPI.get_cds_by_gene'] = 'required'
-        self.rpc_service.add(impl_testGenomeAnnotationAPI.get_cds_by_mrna,
-                             name='testGenomeAnnotationAPI.get_cds_by_mrna',
+        self.method_authentication['testGenAnnoAPI.get_cds_by_gene'] = 'required'
+        self.rpc_service.add(impl_testGenAnnoAPI.get_cds_by_mrna,
+                             name='testGenAnnoAPI.get_cds_by_mrna',
                              types=[basestring, list])
-        self.method_authentication['testGenomeAnnotationAPI.get_cds_by_mrna'] = 'required'
-        self.rpc_service.add(impl_testGenomeAnnotationAPI.get_gene_by_cds,
-                             name='testGenomeAnnotationAPI.get_gene_by_cds',
+        self.method_authentication['testGenAnnoAPI.get_cds_by_mrna'] = 'required'
+        self.rpc_service.add(impl_testGenAnnoAPI.get_gene_by_cds,
+                             name='testGenAnnoAPI.get_gene_by_cds',
                              types=[basestring, list])
-        self.method_authentication['testGenomeAnnotationAPI.get_gene_by_cds'] = 'required'
-        self.rpc_service.add(impl_testGenomeAnnotationAPI.get_gene_by_mrna,
-                             name='testGenomeAnnotationAPI.get_gene_by_mrna',
+        self.method_authentication['testGenAnnoAPI.get_gene_by_cds'] = 'required'
+        self.rpc_service.add(impl_testGenAnnoAPI.get_gene_by_mrna,
+                             name='testGenAnnoAPI.get_gene_by_mrna',
                              types=[basestring, list])
-        self.method_authentication['testGenomeAnnotationAPI.get_gene_by_mrna'] = 'required'
-        self.rpc_service.add(impl_testGenomeAnnotationAPI.get_mrna_by_cds,
-                             name='testGenomeAnnotationAPI.get_mrna_by_cds',
+        self.method_authentication['testGenAnnoAPI.get_gene_by_mrna'] = 'required'
+        self.rpc_service.add(impl_testGenAnnoAPI.get_mrna_by_cds,
+                             name='testGenAnnoAPI.get_mrna_by_cds',
                              types=[basestring, list])
-        self.method_authentication['testGenomeAnnotationAPI.get_mrna_by_cds'] = 'required'
-        self.rpc_service.add(impl_testGenomeAnnotationAPI.get_mrna_by_gene,
-                             name='testGenomeAnnotationAPI.get_mrna_by_gene',
+        self.method_authentication['testGenAnnoAPI.get_mrna_by_cds'] = 'required'
+        self.rpc_service.add(impl_testGenAnnoAPI.get_mrna_by_gene,
+                             name='testGenAnnoAPI.get_mrna_by_gene',
                              types=[basestring, list])
-        self.method_authentication['testGenomeAnnotationAPI.get_mrna_by_gene'] = 'required'
-        self.rpc_service.add(impl_testGenomeAnnotationAPI.get_mrna_exons,
-                             name='testGenomeAnnotationAPI.get_mrna_exons',
+        self.method_authentication['testGenAnnoAPI.get_mrna_by_gene'] = 'required'
+        self.rpc_service.add(impl_testGenAnnoAPI.get_mrna_exons,
+                             name='testGenAnnoAPI.get_mrna_exons',
                              types=[basestring, list])
-        self.method_authentication['testGenomeAnnotationAPI.get_mrna_exons'] = 'required'
-        self.rpc_service.add(impl_testGenomeAnnotationAPI.get_mrna_utrs,
-                             name='testGenomeAnnotationAPI.get_mrna_utrs',
+        self.method_authentication['testGenAnnoAPI.get_mrna_exons'] = 'required'
+        self.rpc_service.add(impl_testGenAnnoAPI.get_mrna_utrs,
+                             name='testGenAnnoAPI.get_mrna_utrs',
                              types=[basestring, list])
-        self.method_authentication['testGenomeAnnotationAPI.get_mrna_utrs'] = 'required'
-        self.rpc_service.add(impl_testGenomeAnnotationAPI.status,
-                             name='testGenomeAnnotationAPI.status',
+        self.method_authentication['testGenAnnoAPI.get_mrna_utrs'] = 'required'
+        self.rpc_service.add(impl_testGenAnnoAPI.status,
+                             name='testGenAnnoAPI.status',
                              types=[dict])
         self.auth_client = biokbase.nexus.Client(
             config={'server': 'nexus.api.globusonline.org',
@@ -535,7 +535,7 @@ class Application(object):
                         if token is None and auth_req == 'required':
                             err = ServerError()
                             err.data = "Authentication required for " + \
-                                "testGenomeAnnotationAPI but no authentication header was passed"
+                                "testGenAnnoAPI but no authentication header was passed"
                             raise err
                         elif token is None and auth_req == 'optional':
                             pass

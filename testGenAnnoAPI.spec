@@ -1,4 +1,4 @@
-module testGenomeAnnotationAPI {
+module testGenAnnoAPI {
 
 typedef string ObjectReference;
 

@@ -1,5 +1,5 @@
 
-package us.kbase.testgenomeannotationapi;
+package us.kbase.testgenannoapi;
 
 import java.util.HashMap;
 import java.util.Map;

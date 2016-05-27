@@ -1,7 +1,7 @@
-SERVICE = testgenomeannotationapi
-SERVICE_CAPS = testGenomeAnnotationAPI
-SPEC_FILE = testGenomeAnnotationAPI.spec
-URL = https://kbase.us/services/testgenomeannotationapi
+SERVICE = testgenannoapi
+SERVICE_CAPS = testGenAnnoAPI
+SPEC_FILE = testGenAnnoAPI.spec
+URL = https://kbase.us/services/testgenannoapi
 DIR = $(shell pwd)
 LIB_DIR = lib
 SCRIPTS_DIR = scripts
